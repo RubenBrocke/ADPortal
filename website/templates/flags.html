@@ -1,0 +1,23 @@
+FLAG PAGE
+
+<form action="GET"></form>
+
+<ul id=flags>
+
+</ul>
+
+<script>
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET", "/api/flags", false)
+  xmlHttp.send(null)
+  
+  console.log(xmlHttp.responseText)
+  var flags = JSON.parse(xmlHttp.responseText)
+  var flaglist = document.getElementById("flags")
+  flags.forEach(flag => {
+    var item = document.createElement("li")
+    item.innerHTML = flag.flag
+    flaglist.appendChild(item)
+  });
+  flaglist.appendChild()
+</script>
